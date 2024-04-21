@@ -1,5 +1,5 @@
 const postgresConfig = {
-    host: 'localhost', // 'localhost' is the default;
+    host: 'postgres', // 'localhost' is the default;
     port: 5432, // 5432 is the default;
     database: 'postgres',
     user: 'postgres',
