@@ -8,16 +8,16 @@ sqlStart = `
 create table if not exists clients
 (
     id          serial primary key,
-    client_name varchar
+    client_name varchar not null
 );
 
 create table if not exists projects
 (
     id        serial primary key,
-    client_id integer
+    client_id integer not null
         constraint projects_clients_id_fk
             references clients,
-    name varchar
+    name varchar not null
 );
 
 create table if not exists tasks
@@ -28,8 +28,8 @@ create table if not exists tasks
             references projects
             on delete cascade,
     description varchar not null,
-    time_spent  integer,
-    start_time  timestamp
+    time_spent  integer not null,
+    start_time  timestamp not null
 );
 
 comment on column tasks.time_spent is 'In minutes';
