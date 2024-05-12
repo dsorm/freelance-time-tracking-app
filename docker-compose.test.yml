@@ -7,10 +7,10 @@ services:
       - backend
   backend:
     build: .
-    volumes:
-      - ./config.js:/app/config.js
     ports:
       - "3000:3000"
+    volumes:
+      - ./config.js:/app/config.js
     depends_on:
       postgres:
         condition: service_healthy
@@ -18,6 +18,8 @@ services:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
   postgres:
     image: postgres
+    ports:
+      - "5432:5432"
     volumes:
       - ./data:/var/lib/postgresql/data
     environment:
