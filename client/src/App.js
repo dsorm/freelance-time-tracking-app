@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import {start} from "http-errors";
 
-var endpoint = 'http://localhost:3000'; // replace with your API URL
+var endpoint = 'http://backend:3000'; // replace with your API URL
 
 function App() {
     // Modal states
